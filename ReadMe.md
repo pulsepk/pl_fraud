@@ -1,7 +1,9 @@
 ## Image
 ![Image](https://i.imgur.com/nwnySSO.png)
-## Preview
-![VideoPreview] (https://youtu.be/DK9RdQP_lGg)
+## 📺 Preview
+
+[Watch Video Preview on YouTube](https://youtu.be/DK9RdQP_lGg)
+
 
 Check the below link for installation Guide
 ## Installation
