@@ -1,0 +1,28 @@
+{
+    "itemPlaced": "Hai posizionato il %s a terra.",
+    "itemRemoved": "Hai raccolto il %s.",
+    "generatorFueled": "Hai rifornito il generatore.",
+    "generatorNeedsFuel": "Il generatore ha bisogno di carburante.",
+    "itemsNotClose": "Il laptop, la stampante e il generatore devono essere vicini.",
+    "processingCard": "Elaborazione carta clonata...",
+    "cardCreated": "Hai creato una carta clonata.",
+    "noGeneratorFound": "Nessun generatore trovato nelle vicinanze.",
+    "generatorNotFueled": "Il generatore non è rifornito.",
+    "noPrinterFound": "Nessuna stampante trovata nelle vicinanze.",
+    "alreadyFueled": "Il generatore è già completamente rifornito.",
+    "addedFuel": "Hai aggiunto carburante al generatore. Livello attuale: %s%%",
+    "failed_cloning": "Hai fallito il processo di clonazione.",
+    "process_cancelled": "Processo annullato.",
+    "process_card_first": "Devi prima elaborare la carta clonata.",
+    "object_removed": "%s è stato rimosso.",
+    "target_remove_icon": "Rimuovi oggetto",
+    "insert_card": "Inserisci carta clonata",
+    "inserting_card": "Inserimento della carta clonata...",
+    "dispatch_message": "Attività di clonazione segnalata",
+    "no_fuel_can": "Non hai una tanica di benzina",
+    "cant_give_card": "Impossibile dare la carta clonata (l'inventario potrebbe essere pieno)",
+    "already_placed": "Questo oggetto è già stato posizionato.",
+    "object_control": "[SCROLL] Ruota  \n[PG UP/DOWN] Altezza  \n[ENTER] Posiziona  \n[BACKSPACE] Annulla",
+    "fuel_percentage": "Carburante: %s"
+  }
+  

@@ -1,0 +1,28 @@
+{
+    "itemPlaced": "%s yere yerleştirildi.",
+    "itemRemoved": "%s alındı.",
+    "generatorFueled": "Jeneratöre yakıt eklendi.",
+    "generatorNeedsFuel": "Jeneratörün yakıta ihtiyacı var.",
+    "itemsNotClose": "Laptop, yazıcı ve jeneratör birbirine yakın olmalı.",
+    "processingCard": "Klon kart işleniyor...",
+    "cardCreated": "Klon kart oluşturuldu.",
+    "noGeneratorFound": "Yakınlarda jeneratör bulunamadı.",
+    "generatorNotFueled": "Jeneratör yakıtsız.",
+    "noPrinterFound": "Yakınlarda yazıcı bulunamadı.",
+    "alreadyFueled": "Jeneratör zaten tamamen dolu.",
+    "addedFuel": "Jeneratöre yakıt eklendi. Mevcut seviye: %s%%",
+    "failed_cloning": "Klonlama işlemi başarısız oldu.",
+    "process_cancelled": "İşlem iptal edildi.",
+    "process_card_first": "Önce klon kartı işlemelisin.",
+    "object_removed": "%s kaldırıldı.",
+    "target_remove_icon": "Nesneyi Kaldır",
+    "insert_card": "Klon Kartı Tak",
+    "inserting_card": "Klon Kart Takılıyor...",
+    "dispatch_message": "Klon kart etkinliği bildirildi",
+    "no_fuel_can": "Yakıt bidonun yok",
+    "cant_give_card": "Klon kart verilemedi (envanter dolu olabilir)",
+    "already_placed": "Bu nesne zaten yerleştirilmiş.",
+    "object_control": "[SCROLL] Döndür  \n[PG UP/DOWN] Yükseklik  \n[ENTER] Yerleştir  \n[BACKSPACE] İptal",
+    "fuel_percentage": "Yakıt: %s"
+  }
+  

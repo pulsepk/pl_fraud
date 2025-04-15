@@ -1,0 +1,28 @@
+{
+    "itemPlaced": "Has colocado el %s en el suelo.",
+    "itemRemoved": "Has recogido el %s.",
+    "generatorFueled": "Has abastecido el generador.",
+    "generatorNeedsFuel": "El generador necesita combustible.",
+    "itemsNotClose": "El portátil, la impresora y el generador deben estar cerca.",
+    "processingCard": "Procesando tarjeta clonada...",
+    "cardCreated": "Has creado una tarjeta clonada.",
+    "noGeneratorFound": "No se encontró ningún generador cerca.",
+    "generatorNotFueled": "El generador no tiene combustible.",
+    "noPrinterFound": "No se encontró ninguna impresora cerca.",
+    "alreadyFueled": "El generador ya está completamente abastecido.",
+    "addedFuel": "Has añadido combustible al generador. Nivel actual: %s%%",
+    "failed_cloning": "Has fallado el proceso de clonación.",
+    "process_cancelled": "Proceso cancelado.",
+    "process_card_first": "Necesitas procesar la tarjeta clonada primero.",
+    "object_removed": "%s ha sido eliminado.",
+    "target_remove_icon": "Eliminar objeto",
+    "insert_card": "Insertar tarjeta clonada",
+    "inserting_card": "Insertando tarjeta clonada...",
+    "dispatch_message": "Actividad de clonación de tarjetas reportada",
+    "no_fuel_can": "No tienes una lata de combustible",
+    "cant_give_card": "No se pudo entregar la tarjeta clonada (el inventario podría estar lleno)",
+    "already_placed": "Este objeto ya está colocado en el suelo.",
+    "object_control": "[SCROLL] Rotar  \n[PG UP/DOWN] Altura  \n[ENTER] Colocar  \n[BACKSPACE] Cancelar",
+    "fuel_percentage": "Combustible: %s"
+  }
+  

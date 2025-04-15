@@ -1,0 +1,6 @@
+
+['clone_card'] = {['name'] = 'clone_card', ['label'] = 'Clone Card', ['weight'] = 5, ['type'] = 'item', ['image'] = 'clone_card.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = ''},
+['fuelcan'] = {['name'] = 'fuelcan', ['label'] = 'Fuel Can', ['weight'] = 10, ['type'] = 'item', ['image'] = 'fuelcan.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = ''},
+['generator'] = {['name'] = 'generator', ['label'] = 'Generator', ['weight'] = 10, ['type'] = 'item', ['image'] = 'generator.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = ''},
+['printer'] = {['name'] = 'printer', ['label'] = 'Printer', ['weight'] = 10, ['type'] = 'item', ['image'] = 'printer.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = ''},
+['laptop'] = {['name'] = 'laptop', ['label'] = 'Laptop', ['weight'] = 10, ['type'] = 'item', ['image'] = 'laptop.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = ''},

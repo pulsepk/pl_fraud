@@ -1,0 +1,28 @@
+{
+    "itemPlaced": "Vous avez placé le %s au sol.",
+    "itemRemoved": "Vous avez ramassé le %s.",
+    "generatorFueled": "Vous avez alimenté le générateur.",
+    "generatorNeedsFuel": "Le générateur a besoin de carburant.",
+    "itemsNotClose": "Le PC, l'imprimante et le générateur doivent être proches.",
+    "processingCard": "Traitement de la carte clonée...",
+    "cardCreated": "Vous avez créé une carte clonée.",
+    "noGeneratorFound": "Aucun générateur trouvé à proximité.",
+    "generatorNotFueled": "Le générateur n'est pas alimenté.",
+    "noPrinterFound": "Aucune imprimante trouvée à proximité.",
+    "alreadyFueled": "Le générateur est déjà plein.",
+    "addedFuel": "Vous avez ajouté du carburant au générateur. Niveau actuel : %s%%",
+    "failed_cloning": "Échec du processus de clonage.",
+    "process_cancelled": "Processus annulé.",
+    "process_card_first": "Vous devez d'abord traiter la carte clonée.",
+    "object_removed": "%s a été supprimé.",
+    "target_remove_icon": "Supprimer l'objet",
+    "insert_card": "Insérer la carte clonée",
+    "inserting_card": "Insertion de la carte clonée...",
+    "dispatch_message": "Activité de clonage signalée",
+    "no_fuel_can": "Vous n'avez pas de bidon d'essence",
+    "cant_give_card": "Impossible de donner la carte clonée (l'inventaire est peut-être plein)",
+    "already_placed": "Cet objet est déjà placé au sol.",
+    "object_control": "[SCROLL] Tourner  \n[PG UP/DOWN] Hauteur  \n[ENTER] Placer  \n[BACKSPACE] Annuler",
+    "fuel_percentage": "Carburant : %s"
+  }
+  

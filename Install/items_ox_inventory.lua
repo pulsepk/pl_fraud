@@ -1,0 +1,30 @@
+["clone_card"] = {
+	label = "Clone Card",
+	weight = 5,
+	stack = true,
+	close = true,
+},
+["fuelcan"] = {
+	label = "Fuel Can",
+	weight = 10,
+	stack = true,
+	close = true,
+},
+["laptop"] = {
+    label = "Laptop",
+    weight = 10,
+    stack = true,
+    close = true,
+},
+["printer"] = {
+    label = "Printer",
+    weight = 10,
+    stack = true,
+    close = true,
+},
+["generator"] = {
+    label = "Generator",
+    weight = 10,
+    stack = true,
+    close = true,
+},

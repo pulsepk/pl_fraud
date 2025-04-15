@@ -1,0 +1,28 @@
+{
+    "itemPlaced" :"You placed the %s on the ground.",
+    "itemRemoved" : "You picked up the %s.",
+    "generatorFueled" : "You fueled the generator.",
+    "generatorNeedsFuel" : "The generator needs fuel.",
+    "itemsNotClose" : "The laptop, printer and generator need to be close to each other.",
+    "processingCard" : "Processing clone card...",
+    "cardCreated" : "You have created a clone card.",
+    "noGeneratorFound" : "No generator found nearby.",
+    "generatorNotFueled" : "The generator is not fueled.",
+    "noPrinterFound" : "No printer found nearby.",
+    "alreadyFueled" : "The generator is already fully fueled.",
+    "addedFuel" : "You added fuel to the generator. Current level: %s%%",
+    "failed_cloning": "You have Failed the cloning Process",
+    "process_cancelled": "Process cancelled.",
+    "process_card_first": "You need to process the clone card first.",
+    "object_removed": "%s has been removed.",
+    "target_remove_icon": "Remove Object",
+    "insert_card": "Insert Clone Card",
+    "inserting_card": "Inserting Clone Card...",
+    "dispatch_message": "Card Cloning Activity Reported",
+    "no_fuel_can": "You don't have a fuel can",
+    "cant_give_card": "Could not give clone card (inventory might be full)",
+
+    "already_placed": "This item is already placed on the ground.",
+    "object_control": "[SCROLL] Rotate  \n[PG UP/DOWN] Height  \n[ENTER] Place  \n[BACKSPACE] Cancel",
+    "fuel_percentage": "Fuel: %s"
+}
