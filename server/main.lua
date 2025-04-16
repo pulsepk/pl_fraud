@@ -28,16 +28,34 @@ local function RegisterItems()
         end)
     elseif GetResourceState('qb-core') == 'started' then
         QBCore.Functions.CreateUseableItem(Config.Items.laptop, function(source, item)
-            if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
-            TriggerClientEvent('pl_fraud:client:placeItem', source, 'laptop')
+            local player = getPlayer(source)
+            if lib.checkDependency('qb-inventory', '2.0.0') then
+                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
+                TriggerClientEvent('pl_fraud:client:placeItem', source, 'laptop')
+            else
+                player.Functions.RemoveItem(item.name, 1)
+                TriggerClientEvent('pl_fraud:client:placeItem', source, 'laptop')
+            end
         end)
         QBCore.Functions.CreateUseableItem(Config.Items.printer, function(source, item)
-            if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
-            TriggerClientEvent('pl_fraud:client:placeItem', source, 'printer')
+            local player = getPlayer(source)
+            if lib.checkDependency('qb-inventory', '2.0.0') then
+                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
+                TriggerClientEvent('pl_fraud:client:placeItem', source, 'printer')
+            else
+                player.Functions.RemoveItem(item.name, 1)
+                TriggerClientEvent('pl_fraud:client:placeItem', source, 'printer')
+            end
         end)
         QBCore.Functions.CreateUseableItem(Config.Items.generator, function(source, item)
-            if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
-            TriggerClientEvent('pl_fraud:client:placeItem', source, 'generator')
+            local player = getPlayer(source)
+            if lib.checkDependency('qb-inventory', '2.0.0') then
+                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
+                TriggerClientEvent('pl_fraud:client:placeItem', source, 'generator')
+            else
+                player.Functions.RemoveItem(item.name, 1)
+                TriggerClientEvent('pl_fraud:client:placeItem', source, 'generator')
+            end
         end)
     end
 end
