@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Zip repository with folder
+        run: |
+          mkdir temp
+          repo_name=$(basename $GITHUB_REPOSITORY)
+          mkdir temp/$repo_name
+          shopt -s extglob
+          cp -r !(temp|.git) temp/$repo_name/
+          cd temp
+          zip -r ../$repo_name.zip $repo_name
+          cd ..
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          files: ${{ github.event.repository.name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
