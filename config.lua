@@ -4,9 +4,11 @@ Config = {}
 
 Config.Debug = false -- Set to true to enable debug messages
 
-Config.Target = 'ox-target' --qb-target, ox-target
+Config.UseObjectGizmo = false -- Set to true to use object gizmo for placing items Download: https://github.com/DemiAutomatic/object_gizmo
 
-Config.Notify = 'ox' --ox, esx, okok,qb,wasabi,custom
+Config.Target = 'ox-target' --'qb-target', 'ox-target'
+
+Config.Notify = 'ox' --'ox', 'esx', 'okok','qb','wasabi','brutal_notify','mythic_notify','custom'
 
 -- Item names (can be modified to match your server's item names)
 Config.Items = {
@@ -35,6 +37,10 @@ Config.Props = {
     generator = "prop_generator_01a"
 }
 
+Config.Police= {
+    Job = 'police', -- Job name for police
+}
+
 Config.atmModels = {
     `prop_atm_01`,
     `prop_atm_02`,
@@ -61,14 +67,15 @@ Config.TargetOptions = {
     }
 }
 
---ps for ps-dispatch
---aty for aty_disptach
---qs for qausar dispatch
---rcore for rcore dispatch
+--'ps' for ps-dispatch
+--'aty' for aty_disptach | Free https://github.com/atiysuu/aty_dispatch
+--'qs' for qausar dispatch
+--'rcore' for rcore dispatch
+--'op' for op-dispatch | Free https://github.com/ErrorMauw/op-dispatch
 --custom for your own
 
 Config.Dispatch= {
     enable = false,
-    script = 'ps'
+    script = 'op'
 }
 

@@ -66,6 +66,37 @@ local function PlaceItem(itemType)
     SetEntityAlpha(obj, 150, false)
     SetEntityCollision(obj, false, false)
     SetEntityAsMissionEntity(obj, true, true)
+    if Config.UseObjectGizmo then
+        exports.object_gizmo:useGizmo(obj)
+        FreezeEntityPosition(obj, true)
+        SetEntityAlpha(obj, 255, false)
+        SetEntityCollision(obj, true, true)
+        placedObjects[itemType] = obj
+
+        if itemType == Config.Items.generator then
+            local generatorCoords = GetEntityCoords(obj)
+            lib.zones.box({
+                coords = generatorCoords,
+                size = vec3(2.0, 2.0, 2.0),
+                rotation = 0,
+                debug = false,
+                onEnter = function()
+                    local percentage = math.floor((generatorFuel / Config.RequiredFuel) * 100)
+                    currentFuelText = lib.showTextUI("Fuel: " .. percentage .. "%")
+                end,
+                onExit = function()
+                    lib.hideTextUI()
+                    currentFuelText = nil
+                end,
+            })
+        end
+
+        if itemType == Config.Items.laptop or itemType == Config.Items.generator or itemType == Config.Items.printer then
+            Framework_AddTargetToEntity(obj, itemType)
+        end
+        TriggerEvent("pl_fraud:notification",locale("itemPlaced", itemType), "success")
+        SetModelAsNoLongerNeeded(model)
+    else
     local heading = GetEntityHeading(obj)
     local zOffset = 0.0
 
@@ -133,6 +164,7 @@ local function PlaceItem(itemType)
             end
         end
     end)
+    end
 end
 
 
@@ -539,6 +571,22 @@ function DispatchAlert()
             }
         TriggerServerEvent('rcore_dispatch:server:sendAlert', alert)
     end)
+    elseif Config.Dispatch.script == 'op' then
+        local ped = PlayerPedId()
+        local coords = GetEntityCoords(ped)
+        local street1, street2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+        local street1name = GetStreetNameFromHashKey(street1)
+        local street2name = GetStreetNameFromHashKey(street2)
+            
+        local job = Config.Police.Job -- Jobs that will receive the alert
+        local title = "Card Cloning" -- Main title alert
+        local id = GetPlayerServerId(PlayerId()) -- Player that triggered the alert
+        local panic = false -- Allow/Disable panic effect
+            
+        local locationText = street2name and (street1name .. " and " .. street2name) or street1name
+        local text = "Card Cloning Activity Reported in progress on " .. locationText -- Main text alert
+            
+        TriggerServerEvent('Opto_dispatch:Server:SendAlert', job, title, text, coords, panic, id)
     elseif Config.Dispatch.script == 'custom' then
 
     end
@@ -581,7 +629,11 @@ AddEventHandler('pl_fraud:notification', function(message, type)
     elseif Config.Notify == 'qb' then
         TriggerEvent("QBCore:Notify", message, type, 6000)
     elseif Config.Notify == 'wasabi' then
-        exports.wasabi_notify:notify("ATM ROBBERY", message, 6000, type, false, 'fas fa-ghost')
+        exports.wasabi_notify:notify("Fraud Script", message, 6000, type, false, 'fas fa-ghost')
+    elseif Config.Notify == 'brutal_notify' then
+        exports['brutal_notify']:SendAlert('Notify', message, 6000, type, false)
+    elseif Config.Notify == 'mythic_notify' then
+        exports['mythic_notify']:SendAlert(type, message)
     elseif Config.Notify == 'custom' then
         -- Add your custom notifications here
     end
@@ -595,5 +647,4 @@ AddEventHandler('onResourceStop', function(resourceName)
         end
     end
 end)
-
 
