@@ -2,6 +2,8 @@ lib.locale()
 
 Config = {}
 
+Config.WaterMark = true
+
 Config.Debug = false -- Set to true to enable debug messages
 
 Config.UseObjectGizmo = false -- Set to true to use object gizmo for placing items Download: https://github.com/DemiAutomatic/object_gizmo
@@ -17,6 +19,10 @@ Config.Items = {
     generator = "generator",
     fuelCan = "fuelcan",
     cloneCard = "clone_card"
+}
+
+Config.Hacking = {
+    Minigame = 'datacrack', --'datacrack','ps-ui-circle','ps-ui-maze','ps-ui-scrambler'
 }
 
 Config.Rewards = {

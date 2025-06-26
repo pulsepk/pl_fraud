@@ -220,23 +220,41 @@ local function ProcessCard(entity)
             combat = true,
         },
     })then
-        TriggerEvent("datacrack:start", 2, function(output)
-            if Config.Dispatch.enable then
-                DispatchAlert()
+            local function handleResult(success)
+                if Config.Dispatch.enable then
+                        DispatchAlert()
+                end
+                if success then
+                    cardclone = true
+                    ClearPedTasksImmediately(PlayerPedId())
+                    TriggerServerEvent("pl_fraud:server:minigameResult", true)
+                else
+                    TriggerEvent("pl_fraud:notification", locale("failed_cloning"), "error")
+                    TriggerServerEvent("pl_fraud:server:minigameResult", false)
+                end
             end
-            if output == true then
-                ClearPedTasksImmediately(playerPed)
-                cardclone = true
-                generatorFuel = 0
+            if Config.Hacking.Minigame == 'datacrack' then
+                TriggerEvent("datacrack:start", 2, function(output)
+                    handleResult(output)
+                end)
+            elseif Config.Hacking.Minigame == 'ps-ui-circle' then
+                exports['ps-ui']:Circle(function(success)
+                    handleResult(success)
+                end, 4, 60)
+            elseif Config.Hacking.Minigame == 'ps-ui-maze' then
+                exports['ps-ui']:Maze(function(success)
+                    handleResult(success)
+                end, 120)
+            elseif Config.Hacking.Minigame == 'ps-ui-scrambler' then
+                exports['ps-ui']:Scrambler(function(success)
+                    handleResult(success)
+                end, 'numeric', 120, 1)
             else
-                TriggerEvent("pl_fraud:notification",locale("failed_cloning"), "error")
+                TriggerEvent('pl_atmrobbery:notification', 'Invalid minigame configuration.', 'error')
             end
-        end)
-
-    else
-        TriggerEvent("pl_fraud:notification",locale("process_cancelled"), "error")
-    end
-    
+        else
+            TriggerEvent("pl_fraud:notification",locale("process_cancelled"), "error")
+        end
 end
 
 
@@ -359,11 +377,9 @@ function Framework_AddTargetToEntity(entity, type)
                 icon = "fas fa-trash", -- Trash icon for remove
                 label = locale("target_remove_icon"),
                 onSelect = function()
-                    local coords = GetEntityCoords(entity)
                     DeleteEntity(entity)
                     placedObjects[type] = nil
-                    TriggerEvent("pl_fraud:notification", locale("object_removed",type), "success")
-                    TriggerServerEvent('pl_fraud:server:removeobject',coords,type)
+                    TriggerServerEvent('pl_fraud:server:removeobject',type)
                 end,
                 canInteract = function()
                     return true
@@ -394,11 +410,9 @@ function Framework_AddTargetToEntity(entity, type)
                     icon = "fas fa-trash",
                     label = locale("target_remove_icon"),
                     action = function()
-                        local coords = GetEntityCoords(entity)
                         DeleteEntity(entity)
                         placedObjects[type] = nil
-                        TriggerEvent("pl_fraud:notification", locale("object_removed",type), "success")
-                        TriggerServerEvent('pl_fraud:server:removeobject',coords,type)
+                        TriggerServerEvent('pl_fraud:server:removeobject',type)
                     end,
                     canInteract = function()
                         return true

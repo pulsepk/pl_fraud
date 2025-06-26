@@ -1,6 +1,8 @@
 local resourceName = 'pl_fraud'
 lib.versionCheck('pulsepk/pl_fraud')
 lib.locale()
+local minigameSuccess = {}
+local recentRequests = {}
 
 if GetResourceState('es_extended') == 'started' then
     ESX = exports['es_extended']:getSharedObject()
@@ -77,18 +79,69 @@ AddEventHandler('pl_fraud:server:removeFuelCan', function(entity)
     end
 end)
 
--- Event to give a clone card
-RegisterNetEvent('pl_fraud:server:giveCloneCard')
-AddEventHandler('pl_fraud:server:giveCloneCard', function()
+RegisterNetEvent("pl_fraud:server:minigameResult", function(success)
     local src = source
-    local player = getPlayer(src)
-    if AddItem(player, Config.Items.cloneCard, 1) then
+
+    if success then
+        minigameSuccess[src] = true
+        SetTimeout(15000, function()
+            minigameSuccess[src] = nil
+        end)
     else
-        if src then
-            TriggerClientEvent("pl_fraud:notification", src, locale("cant_give_card"), "error")
-        end
+        minigameSuccess[src] = nil
     end
 end)
+
+
+RegisterNetEvent('pl_fraud:server:giveCloneCard', function()
+    local src = source
+    local player = getPlayer(src)
+    if not player then return end
+    if not minigameSuccess[src] then
+        print(("[SECURITY] Player %s tried to clone card without valid minigame result"):format(src))
+        TriggerClientEvent("pl_fraud:notification", src, locale("failed_cloning"), "error")
+        return
+    end
+
+    local nearbyProps = GetEntityCoords(GetPlayerPed(src))
+    local requiredItems = {
+        Config.Props.laptop,
+        Config.Props.printer,
+        Config.Props.generator,
+    }
+
+    local function hasNearbyObject(item)
+        local objects = GetGamePool("CObject")
+        for _, obj in pairs(objects) do
+            if DoesEntityExist(obj) then
+                local model = GetEntityModel(obj)
+                if model == GetHashKey(item) then
+                    local objCoords = GetEntityCoords(obj)
+                    if #(objCoords - nearbyProps) < 5.0 then
+                        return true
+                    end
+                end
+            end
+        end
+        return false
+    end
+
+    for _, item in ipairs(requiredItems) do
+        if not hasNearbyObject(item) then
+            TriggerClientEvent("pl_fraud:notification", src, locale("itemsNotClose"), "error")
+            print(("[FRAUD]: Player %s missing required object '%s' nearby"):format(src, item))
+            return
+        end
+    end
+    if AddItem(player, Config.Items.cloneCard, 1) then
+        print(("[FRAUD]: Clone card given to player %s"):format(src))
+        minigameSuccess[src] = nil
+    else
+        TriggerClientEvent("pl_fraud:notification", src, locale("cant_give_card"), "error")
+        print(("[FRAUD]: Failed to give card to player %s"):format(src))
+    end
+end)
+
 
 RegisterNetEvent('pl_fraud:server:CloneCard')
 AddEventHandler('pl_fraud:server:CloneCard', function(atmcoords)
@@ -108,22 +161,22 @@ AddEventHandler('pl_fraud:server:CloneCard', function(atmcoords)
     end
 end)
 
-RegisterNetEvent('pl_fraud:server:removeobject')
-AddEventHandler('pl_fraud:server:removeobject', function(coords,type)
+RegisterNetEvent('pl_fraud:server:removeobject', function(type)
     local src = source
     local player = getPlayer(src)
-    local Identifier = GetPlayerIdentifier(src)
-    local PlayerName = getPlayerName(src)
-    local ped = GetPlayerPed(src)
-    local distance = GetEntityCoords(ped)
-    if #(distance - coords) <= 5 then
-        if Player then
-            AddItem(player, type, 1)
-        end
-    else
-        print('**Name:** '..PlayerName..'\n**Identifier:** '..Identifier..'** Attempted Exploit : Possible Hacker**')
+    local identifier = GetPlayerIdentifier(src)
+    local playerName = getPlayerName(src)
+
+    if not Config.Items[type] then
+        print(('[PL_FRAUD] ⚠️ %s (%s) attempted invalid type "%s"'):format(playerName, identifier, tostring(type)))
+        return
     end
+
+    AddItem(player, Config.Items[type], 1)
+    TriggerClientEvent("pl_fraud:notification", src, locale("object_removed", type), "success")
+    print(('[PL_FRAUD] ✅ Returned item "%s" to %s (%s)'):format(type, playerName, identifier))
 end)
+
 
 RegisterItems()
 
@@ -137,4 +190,6 @@ local WaterMark = function()
     end)
 end
 
-WaterMark()
+if Config.WaterMark then
+    WaterMark()
+end
