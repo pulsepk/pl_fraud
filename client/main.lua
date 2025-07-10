@@ -220,7 +220,7 @@ local function ProcessCard(entity)
             combat = true,
         },
     })then
-            local function handleResult(success)
+        local function handleResult(success)
                 if Config.Dispatch.enable then
                         DispatchAlert()
                 end
