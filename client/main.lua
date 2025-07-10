@@ -228,6 +228,9 @@ local function ProcessCard(entity)
                     cardclone = true
                     ClearPedTasksImmediately(PlayerPedId())
                     TriggerServerEvent("pl_fraud:server:minigameResult", true)
+                    if generatorFuel > 0 then
+                        generatorFuel = generatorFuel-10
+                    end
                 else
                     TriggerEvent("pl_fraud:notification", locale("failed_cloning"), "error")
                     TriggerServerEvent("pl_fraud:server:minigameResult", false)
@@ -328,6 +331,7 @@ RegisterNetEvent('pl_fraud:client:fuelAdded', function(amount, entity)
         generatorFuel = Config.RequiredFuel
     end
     local percentage = math.floor((generatorFuel / Config.RequiredFuel) * 100)
+
     TriggerEvent("pl_fraud:notification", locale("addedFuel", percentage), "success")
 
     if currentFuelText then

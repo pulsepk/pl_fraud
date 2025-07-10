@@ -32,7 +32,7 @@ Config.Rewards = {
 }
 
 -- General settings
-Config.RequiredFuel = 100 -- Amount of fuel needed for the generator
+Config.RequiredFuel = 10 -- Amount of fuel needed for the generator
 Config.ProximityDistance = 2.0 -- Maximum distance between items to be considered "close"
 Config.ProcessTime = 3000
 
