@@ -2,7 +2,7 @@ local resourceName = 'pl_fraud'
 lib.versionCheck('pulsepk/pl_fraud')
 lib.locale()
 local minigameSuccess = {}
-local recentRequests = {}
+
 
 if GetResourceState('es_extended') == 'started' then
     ESX = exports['es_extended']:getSharedObject()
@@ -11,56 +11,41 @@ elseif GetResourceState('qb-core') == 'started' then
 end
 
 -- Register item use events
-local function RegisterItems()
-    if GetResourceState('es_extended') == 'started' then
-        ESX.RegisterUsableItem(Config.Items.laptop, function(source)
-            local player = getPlayer(source)
-            TriggerClientEvent('pl_fraud:client:placeItem', source, 'laptop')
-            RemoveItem(player, 'laptop', 1)
-        end)
-        ESX.RegisterUsableItem(Config.Items.printer, function(source)
-            local player = getPlayer(source)
-            TriggerClientEvent('pl_fraud:client:placeItem', source, 'printer')
-            RemoveItem(player, 'printer', 1)
-        end)
-        ESX.RegisterUsableItem(Config.Items.generator, function(source)
-            local player = getPlayer(source)
-            TriggerClientEvent('pl_fraud:client:placeItem', source, 'generator')
-            RemoveItem(player, 'generator', 1)
-        end)
-    elseif GetResourceState('qb-core') == 'started' then
-        QBCore.Functions.CreateUseableItem(Config.Items.laptop, function(source, item)
-            local player = getPlayer(source)
-            if lib.checkDependency('qb-inventory', '2.0.0') then
-                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
-                TriggerClientEvent('pl_fraud:client:placeItem', source, 'laptop')
-            else
-                player.Functions.RemoveItem(item.name, 1)
-                TriggerClientEvent('pl_fraud:client:placeItem', source, 'laptop')
-            end
-        end)
-        QBCore.Functions.CreateUseableItem(Config.Items.printer, function(source, item)
-            local player = getPlayer(source)
-            if lib.checkDependency('qb-inventory', '2.0.0') then
-                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
-                TriggerClientEvent('pl_fraud:client:placeItem', source, 'printer')
-            else
-                player.Functions.RemoveItem(item.name, 1)
-                TriggerClientEvent('pl_fraud:client:placeItem', source, 'printer')
-            end
-        end)
-        QBCore.Functions.CreateUseableItem(Config.Items.generator, function(source, item)
-            local player = getPlayer(source)
-            if lib.checkDependency('qb-inventory', '2.0.0') then
-                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
-                TriggerClientEvent('pl_fraud:client:placeItem', source, 'generator')
-            else
-                player.Functions.RemoveItem(item.name, 1)
-                TriggerClientEvent('pl_fraud:client:placeItem', source, 'generator')
+function RegisterUsable(itemName, oxName)
+    if GetResourceState('ox_inventory') == 'started' then
+        exports(itemName, function(event, item, inventory, slot, data)
+            if event == 'usedItem' then
+                TriggerClientEvent('pl_fraud:client:placeItem', inventory.id, oxName)
+                exports.ox_inventory:RemoveItem(inventory.id, oxName, 1)
             end
         end)
     end
+
+    if GetResourceState('es_extended') == 'started' then
+        ESX.RegisterUsableItem(itemName, function(source)
+            local player = getPlayer(source)
+            TriggerClientEvent('pl_fraud:client:placeItem', source, oxName)
+            RemoveItem(player, oxName, 1)
+        end)
+    elseif GetResourceState('qb-core') == 'started' then
+        QBCore.Functions.CreateUseableItem(itemName, function(source, item)
+            local player = getPlayer(source)
+            if lib.checkDependency('qb-inventory', '2.0.0') then
+                if not exports['qb-inventory']:RemoveItem(source, item.name, 1, item.slot) then return end
+            else
+                player.Functions.RemoveItem(item.name, 1)
+            end
+            TriggerClientEvent('pl_fraud:client:placeItem', source, oxName)
+        end)
+    end
 end
+
+function RegisterItems()
+    RegisterUsable(Config.Items.laptop, 'laptop')
+    RegisterUsable(Config.Items.printer, 'printer')
+    RegisterUsable(Config.Items.generator, 'generator')
+end
+
 
 RegisterNetEvent('pl_fraud:server:removeFuelCan')
 AddEventHandler('pl_fraud:server:removeFuelCan', function(entity)
@@ -178,7 +163,6 @@ RegisterNetEvent('pl_fraud:server:removeobject', function(type)
 end)
 
 
-RegisterItems()
 
 local WaterMark = function()
     SetTimeout(1500, function()
@@ -190,6 +174,13 @@ local WaterMark = function()
     end)
 end
 
-if Config.WaterMark then
-    WaterMark()
-end
+RegisterServerEvent('onResourceStart', function(resourceName)
+    if resourceName == GetCurrentResourceName() then
+        print('^1['..resourceName..'] ^2Resource started successfully!^0')
+        RegisterItems()
+        Wait(1000)
+        if Config.WaterMark then
+            WaterMark()
+        end
+    end
+end)
