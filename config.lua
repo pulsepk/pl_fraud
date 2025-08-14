@@ -8,9 +8,24 @@ Config.Debug = false -- Set to true to enable debug messages
 
 Config.UseObjectGizmo = false -- Set to true to use object gizmo for placing items Download: https://github.com/DemiAutomatic/object_gizmo
 
-Config.Target = 'ox-target' --'qb-target', 'ox-target'
+Config.Target = 'autodetect' -- 'autodetect', qb-target', 'ox_target'
 
 Config.Notify = 'ox' --'ox', 'esx', 'okok','qb','wasabi','brutal_notify','mythic_notify','custom'
+
+Config.Shop = {
+    Enable = true,
+    id = "frauditems", -- Shop identifier
+    name = "Fraud Market", -- Display name
+    coords = vec3(430.1993, -1559.3730, 32.8),
+    heading = 319.6178,
+    pedModel = "a_m_m_og_boss_01", -- Change to any ped model
+    blip = {
+        enabled = true,
+        sprite = 59, -- Shop blip icon
+        color = 2,  -- Green
+        scale = 0.8
+    }
+}
 
 -- Item names (can be modified to match your server's item names)
 Config.Items = {
@@ -73,11 +88,11 @@ Config.TargetOptions = {
     }
 }
 
---'ps' for ps-dispatch
---'aty' for aty_disptach | Free https://github.com/atiysuu/aty_dispatch
---'qs' for qausar dispatch
---'rcore' for rcore dispatch
---'op' for op-dispatch | Free https://github.com/ErrorMauw/op-dispatch
+--'ps' for ps-dispatch       | Free: https://github.com/Project-Sloth/ps-dispatch
+--'aty' for aty_disptach     | Free: https://github.com/atiysuu/aty_dispatch
+--'qs' for qausar dispatch   | Paid: https://www.quasar-store.com/
+--'rcore' for rcore dispatch | Paid: https://store.rcore.cz/
+--'op' for op-dispatch       | Free: https://github.com/ErrorMauw/op-dispatch
 --custom for your own
 
 Config.Dispatch= {
