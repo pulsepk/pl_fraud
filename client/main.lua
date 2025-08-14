@@ -9,6 +9,23 @@ local generatorFuel = 0
 local currentFuelText = nil
 local cardclone = false
 
+function GetTarget()
+    if Config.Target ~= 'autodetect' then
+        return Config.Target
+    end
+
+    if GetResourceState('ox_target') == 'started' then
+        return 'ox_target'
+    elseif GetResourceState('qb-target') == 'started' then
+        return 'qb-target'
+    else
+        print('^1[Warning] No compatible Target resource detected.^0')
+        return nil
+    end
+end
+
+local targetResource = GetTarget()
+
 local function IsItemPlaced(itemType)
     return placedObjects[itemType] ~= nil and DoesEntityExist(placedObjects[itemType])
 end
@@ -356,7 +373,7 @@ end)
 
 
 function Framework_AddTargetToEntity(entity, type)
-    if Config.Target == 'ox-target' then
+    if targetResource == 'ox_target' then
         local options = {
             {
                 name = 'fraud_' .. type,
@@ -391,7 +408,7 @@ function Framework_AddTargetToEntity(entity, type)
             }
         }
         exports['ox_target']:addLocalEntity(entity, options)
-    elseif Config.Target == 'qb-target' then
+    elseif targetResource == 'qb-target' then
         exports['qb-target']:AddTargetEntity(entity, {
             options = {
                 {
@@ -428,7 +445,7 @@ function Framework_AddTargetToEntity(entity, type)
     end
 end
 
-if Config.Target == 'ox-target' then
+if targetResource == 'ox_target' then
     exports.ox_target:addModel(Config.atmModels, {
         {
             name = 'insert_clonecard',
@@ -468,7 +485,7 @@ if Config.Target == 'ox-target' then
             end
         }
     })
-elseif Config.Target == 'qb-target' then
+elseif targetResource == 'qb-target' then
     exports['qb-target']:AddTargetModel(Config.atmModels, {
         options = {
             {
@@ -656,6 +673,7 @@ AddEventHandler('pl_fraud:notification', function(message, type)
         -- Add your custom notifications here
     end
 end)
+
 
 AddEventHandler('onResourceStop', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
