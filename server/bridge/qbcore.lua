@@ -78,13 +78,15 @@ function AddMoney(player, amount)
     end
 end
 
-function HasItem(playerSource,itemName)
+function HasItem(playerSource, itemName)
+    if GetResourceState('ox_inventory') == 'started' then
+        local count = exports.ox_inventory:GetItemCount(playerSource, itemName)
+        return count and count >= 1
+    end
     local xPlayer = getPlayer(playerSource)
     if not xPlayer then return false end
-    local item = xPlayer.Functions.GetItemByName(itemName)?.amount or 0
-    if item >= 1 then
-        return true
-    else
-        return false
-    end
+
+    local item = xPlayer.Functions.GetItemByName(itemName)
+    return (item and item.amount or 0) >= 1
 end
+
