@@ -28,7 +28,7 @@ Built for popular frameworks like ESX, QBCore, and Qbox, it offers immersive mec
 
 ######
 ## Support, Scripts & More
-- [Script Store](https://pulsescripts.tebex.io/)
+- [Script Store](https://pulsescripts.com/)
 - [Join the Discord For Support](https://discord.gg/c6gXmtEf3H)
 ######
 
@@ -37,7 +37,7 @@ Built for popular frameworks like ESX, QBCore, and Qbox, it offers immersive mec
 - [datacrack](https://github.com/utkuali/datacrack)
   
 ## Installation Guide
-Checkout our documentation page for instructions on installing the script. [Click Here](https://docs.pulsescripts.dev/free-scripts/fraud/installation)
+Checkout our documentation page for instructions on installing the script. [Click Here](https://pulsescripts.gitbook.io/)
 
 ## Paid Scripts
 If you liked our free scripts and want to contribute, please check out our paid scripts
