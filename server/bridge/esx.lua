@@ -44,9 +44,9 @@ function RemoveItem(player, itemName, amount)
 end
 
 function AddMoney(player, amount)
-    if Config.Rewards.EnableBlackMoney then
+    if Config.Rewards.moneytype == 'black_money' then
         player.addAccountMoney('black_money', amount)
-    else
+    elseif Config.Rewards.moneytype == 'money' then
         player.addMoney(amount)
     end
 end

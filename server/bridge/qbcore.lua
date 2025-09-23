@@ -66,14 +66,12 @@ function RemoveItem(player, itemName, amount)
 end
 
 function AddMoney(player, amount)
-    if Config.Rewards.EnableBlackMoney then
-        local totalWorth = amount
-        if Config.Rewards.moneytype == 'markedbills' then
-            AddItem(player,Config.Rewards.moneytype,amount,totalWorth)
-        else
-            AddItem(player,Config.Rewards.moneytype,amount)
-        end
-    else
+    local totalWorth = amount
+    if Config.Rewards.moneytype == 'markedbills' then
+        AddItem(player,Config.Rewards.moneytype,amount,totalWorth)
+    elseif Config.Rewards.moneytype == 'black_money' then
+        AddItem(player,Config.Rewards.moneytype,amount)
+    elseif Config.Rewards.moneytype == 'money' then
         player.Functions.AddMoney('cash', amount)
     end
 end

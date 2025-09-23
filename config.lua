@@ -41,7 +41,6 @@ Config.Hacking = {
 }
 
 Config.Rewards = {
-    EnableBlackMoney = true,
     amount = 100,
     moneytype = 'black_money', -- Can be 'money','black_money','markedbills'
 }
