@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'PulseScripts'
 description 'Fraud Script'
-version '1.1.3'
+version '1.1.4'
 
 shared_scripts {
     '@ox_lib/init.lua',
