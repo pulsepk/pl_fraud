@@ -1,9 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'PulseScripts'
+author 'PulseScripts - pulsescripts.com'
 description 'Fraud Script'
-version '1.1.4'
+version '1.1.5'
 
 shared_scripts {
     '@ox_lib/init.lua',
