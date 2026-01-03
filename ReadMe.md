@@ -1,6 +1,12 @@
 [![youtube preview](https://i.imgur.com/nwnySSO.png)](https://youtu.be/DK9RdQP_lGg)
 
-[![ZAP-Hosting Gameserver and Webhosting](https://zap-hosting.com/interface/download/images.php?type=affiliate&id=431904)](https://zap-hosting.com/pulsescripts?voucher=pulse-20)
+## Hosting we use: ZAP-Hosting
+
+If you are running a FiveM server (or any game server) and you want something that is quick to set up and stable, ZAP-Hosting is worth a look. They offer game servers, VPS, and dedicated options, so you can start small and scale up when your player count grows.
+
+For our project: **All our scripts are tested and running on servers provided by ZAP-Hosting.** That is why we recommend it for anyone who wants a clean environment to run and test resources without random performance issues.
+
+You can check them out here: **[ZAP-Hosting](https://zap-hosting.com/en/)**
 
 
 # FiveM Fraud Scamming Script 🚓💰
