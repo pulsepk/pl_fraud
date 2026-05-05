@@ -1,59 +1,60 @@
-[![youtube preview](https://i.imgur.com/nwnySSO.png)](https://youtu.be/DK9RdQP_lGg)
-
-[![ZAP-Hosting Gameserver and Webhosting](https://zap-hosting.com/interface/download/images.php?type=affiliate&id=431904)](https://zap-hosting.com/pulsescripts?voucher=pulse-20)
-
+[![Preview](https://i.imgur.com/nwnySSO.png)](https://youtu.be/DK9RdQP_lGg)
 
 # FiveM Fraud Scamming Script 🚓💰
 
-Elevate your server experience with this fully-featured FiveM Fraud Script!
-Built for popular frameworks like ESX, QBCore, and Qbox, it offers immersive mechanics, flexible customization, and seamless integration for a truly dynamic and realistic scam system.
+A fully-featured fraud script built for **ESX**, **QBCore**, and **Qbox**. Immersive mechanics, flexible config, and seamless framework integration out of the box.
 
+## 🌟 Features
 
-## 🌟 Key Features
-######
-- ✅ Framework Compatibility: Seamlessly works with ESX, QBCore, and Qbox frameworks.
+- ✅ **Framework Support** — ESX, QBCore, and Qbox
+- 🚨 **Police Alerts** — ps-dispatch, Aty-dispatch, Quasar Dispatch, Rcore Dispatch
+- 🧠 **Scam Minigame** — Skill-based hacking/fraud mechanic
+- 💸 **Customizable Payouts** — Fine-tune rewards for your server economy
+- 🏴‍☠️ **Black Market** — Purchase fraud items in-world
+- 🔔 **Notifications** — ox_lib, ESX, QBCore, okok, wasabi
+- 🎯 **Target Systems** — qb-target and ox_target
+- 🌍 **Multi-Language** — English, Spanish, German, French, Italian, Turkish
 
-- 🚨 Police Alert System: Fully integrated with ps-dispatch, Aty-dispatch, Qausar Dispatch, and Rcore Dispatch for immersive and realistic scam activity alerts.
+## 📦 Dependencies
 
-- 🧠 Scam Minigame: Engaging and skill-based hacking/fraud minigame for executing scam attempts.
-
-- 💸 Customizable Rewards: Configure scam success payouts for balanced server economy control.
-
-- 🏴‍☠️ Black Market: Buy fraud Items from the black market
-
-- 🔔 Flexible Notification System: Supports ox_lib, ESX, QBCore, okok, and wasabi notification frameworks.
-
-- 🎯 Targeting Compatibility: Compatible with both qb-target and ox_target systems.
-
-- 🌍 Multi-Language Support: Fully translated in English, Spanish, German, French, Italian, and Turkish.
-
-
-######
-## Support, Scripts & More
-- [Script Store](https://pulsescripts.com/)
-- [Join the Discord For Support](https://discord.gg/c6gXmtEf3H)
-######
-
-## Dependencies
 - [ox_lib](https://github.com/overextended/ox_lib/releases)
 - [datacrack](https://github.com/utkuali/datacrack)
-  
-## Installation Guide
-Checkout our documentation page for instructions on installing the script. [Click Here](https://pulsescripts.gitbook.io/)
 
-## Paid Scripts
-If you liked our free scripts and want to contribute, please check out our paid scripts
+## 📖 Installation
 
-* 🍔 [BurgerShot](https://pulsescripts.com/product/burgershot)
-* 🐱 [UwU Cat Cafe](https://pulsescripts.com/product/uwucatcafe)
-* 🍕 [Pizza This](https://pulsescripts.com/product/6707931)
-* ☕ [Bean Machine](https://pulsescripts.com/product/6741732)
-* 🐟 [KOI](https://pulsescripts.com/product/6994012)
-* 🍽️ [Diner](https://pulsescripts.com/product/7007587)
-* 🌮 [Taco Farmer](https://pulsescripts.com/product/6707937)
-* 🐚 [Pearls](https://pulsescripts.com/product/6707935)
-* 🍔 [Horny Burgers + UpnAtom](https://pulsescripts.com/product/6749404)
-* 🍩 [Rusty Browns](https://pulsescripts.com/product/6707942)
-* 🍬 [Bubble Gum Cafe](https://pulsescripts.com/product/6707950)
-* 💊 [Drug Selling](https://pulsescripts.com/product/drugsellingv2)
-* 🛑 [Wheel Clamper](https://pulsescripts.com/product/6805299)
+See the full installation guide in our [documentation](https://pulsescripts.gitbook.io/).
+
+## 💬 Support
+
+- [Script Store](https://pulsescripts.com/)
+- [Discord](https://discord.gg/c6gXmtEf3H)
+
+---
+
+## 💡 Want More? → spoodyFraud
+
+`pl_fraud` is lightweight and ready to go. For deeper mechanics and progression, consider upgrading to **spoodyFraud**.
+
+🎟️ Use code **PULSE** for **20% off** (enter in creator code section)
+
+🎬 [Preview](https://www.youtube.com/watch?v=fux1-zGhzEs) &nbsp;|&nbsp; 🛒 [ESX](https://spoody.store/package/5938806) &nbsp;|&nbsp; 🛒 [QB/QBX](https://spoody.store/package/6087850)
+
+---
+
+## 🛒 More Scripts from Pulse Scripts
+
+| Script | Link |
+|--------|------|
+| 🍔 BurgerShot | [View](https://pulsescripts.com/product/burgershot) |
+| 🐱 UwU Cat Cafe | [View](https://pulsescripts.com/product/uwucatcafe) |
+| 🍕 Pizza This | [View](https://pulsescripts.com/product/6707931) |
+| ☕ Bean Machine | [View](https://pulsescripts.com/product/6741732) |
+| 🐟 KOI | [View](https://pulsescripts.com/product/6994012) |
+| 🍽️ Diner | [View](https://pulsescripts.com/product/7007587) |
+| 🌮 Taco Farmer | [View](https://pulsescripts.com/product/6707937) |
+| 🐚 Pearls | [View](https://pulsescripts.com/product/6707935) |
+| 🍔 Horny Burgers + UpnAtom | [View](https://pulsescripts.com/product/6749404) |
+| 🍩 Rusty Browns | [View](https://pulsescripts.com/product/6707942) |
+| 🍬 Bubble Gum Cafe | [View](https://pulsescripts.com/product/6707950) |
+| 💊 Drug Selling | [View](https://pulsescripts.com/product/drugsellingv2) |
+| 🛑 Wheel Clamper | [View](https://pulsescripts.com/product/6805299) |
