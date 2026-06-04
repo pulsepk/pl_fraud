@@ -8,10 +8,6 @@ Config.Debug = false -- Set to true to enable debug messages
 
 Config.UseObjectGizmo = false -- Set to true to use object gizmo for placing items Download: https://github.com/DemiAutomatic/object_gizmo
 
-Config.Target = 'autodetect' -- 'autodetect', qb-target', 'ox_target'
-
-Config.Notify = 'ox' --'ox', 'esx', 'okok','qb','wasabi','brutal_notify','mythic_notify','custom'
-
 Config.Shop = {
     Enable = true,
     id = "frauditems", -- Shop identifier
@@ -46,9 +42,17 @@ Config.Rewards = {
 }
 
 -- General settings
-Config.RequiredFuel = 10 -- Amount of fuel needed for the generator
-Config.ProximityDistance = 2.0 -- Maximum distance between items to be considered "close"
+Config.RequiredFuel = 10          -- Amount of fuel needed for the generator
+Config.ProximityDistance = 2.0    -- Maximum distance between items to be considered "close"
 Config.ProcessTime = 3000
+
+-- Object placement controls (manual mode only — not used when UseObjectGizmo = true)
+-- Controls: [← →] Rotate  [↑ ↓] Height  [Scroll] Coarse rotate  [E/Enter] Place  [Backspace] Cancel
+Config.Placing = {
+    Distance      = 4.0,    -- max forward distance the object can be placed (metres)
+    RotationSpeed = 2.0,    -- degrees rotated per frame while holding ← or →
+    HeightStep    = 0.015,  -- metres moved per frame while holding ↑ or ↓
+}
 
 -- Prop names when placing items on the ground
 Config.Props = {
@@ -87,15 +91,8 @@ Config.TargetOptions = {
     }
 }
 
---'ps' for ps-dispatch       | Free: https://github.com/Project-Sloth/ps-dispatch
---'aty' for aty_disptach     | Free: https://github.com/atiysuu/aty_dispatch
---'qs' for qausar dispatch   | Paid: https://www.quasar-store.com/
---'rcore' for rcore dispatch | Paid: https://store.rcore.cz/
---'op' for op-dispatch       | Free: https://github.com/ErrorMauw/op-dispatch
---custom for your own
-
-Config.Dispatch= {
+-- Dispatch script is auto-detected by pl_lib (ps-dispatch, aty_dispatch, qs-dispatch, rcore_dispatch, op-dispatch, etc.)
+Config.Dispatch = {
     enable = false,
-    script = 'op'
 }
 
