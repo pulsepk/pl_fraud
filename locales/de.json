@@ -22,6 +22,6 @@
     "no_fuel_can": "Du hast keinen Benzinkanister",
     "cant_give_card": "Klonkarte konnte nicht gegeben werden (Inventar möglicherweise voll)",
     "already_placed": "Dieser Gegenstand ist bereits platziert.",
-    "object_control": "[SCROLL] Drehen  \n[PG UP/DOWN] Höhe  \n[ENTER] Platzieren  \n[BACKSPACE] Abbrechen",
+    "object_control": "[← →] Drehen  \n[↑ ↓] Höhe  \n[Scroll] Grobdrehung  \n[E / Enter] Platzieren  [Backspace] Abbrechen",
     "fuel_percentage": "Treibstoff: %s"
   }

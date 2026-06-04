@@ -23,6 +23,6 @@
     "cant_give_card": "Could not give clone card (inventory might be full)",
 
     "already_placed": "This item is already placed on the ground.",
-    "object_control": "[SCROLL] Rotate  \n[PG UP/DOWN] Height  \n[ENTER] Place  \n[BACKSPACE] Cancel",
+    "object_control": "[← →] Rotate  \n[↑ ↓] Height  \n[Scroll] Coarse Rotate  \n[E / Enter] Place  [Backspace] Cancel",
     "fuel_percentage": "Fuel: %s"
 }

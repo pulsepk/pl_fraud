@@ -22,7 +22,7 @@
     "no_fuel_can": "Yakıt bidonun yok",
     "cant_give_card": "Klon kart verilemedi (envanter dolu olabilir)",
     "already_placed": "Bu nesne zaten yerleştirilmiş.",
-    "object_control": "[SCROLL] Döndür  \n[PG UP/DOWN] Yükseklik  \n[ENTER] Yerleştir  \n[BACKSPACE] İptal",
+    "object_control": "[← →] Döndür  \n[↑ ↓] Yükseklik  \n[Scroll] Kaba Döndürme  \n[E / Enter] Yerleştir  [Backspace] İptal",
     "fuel_percentage": "Yakıt: %s"
   }
   

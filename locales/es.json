@@ -22,7 +22,7 @@
     "no_fuel_can": "No tienes una lata de combustible",
     "cant_give_card": "No se pudo entregar la tarjeta clonada (el inventario podría estar lleno)",
     "already_placed": "Este objeto ya está colocado en el suelo.",
-    "object_control": "[SCROLL] Rotar  \n[PG UP/DOWN] Altura  \n[ENTER] Colocar  \n[BACKSPACE] Cancelar",
+    "object_control": "[← →] Rotar  \n[↑ ↓] Altura  \n[Scroll] Rotación gruesa  \n[E / Enter] Colocar  [Backspace] Cancelar",
     "fuel_percentage": "Combustible: %s"
   }
   

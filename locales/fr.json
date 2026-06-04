@@ -22,7 +22,7 @@
     "no_fuel_can": "Vous n'avez pas de bidon d'essence",
     "cant_give_card": "Impossible de donner la carte clonée (l'inventaire est peut-être plein)",
     "already_placed": "Cet objet est déjà placé au sol.",
-    "object_control": "[SCROLL] Tourner  \n[PG UP/DOWN] Hauteur  \n[ENTER] Placer  \n[BACKSPACE] Annuler",
+    "object_control": "[← →] Tourner  \n[↑ ↓] Hauteur  \n[Scroll] Rotation grossière  \n[E / Entrée] Placer  [Retour arrière] Annuler",
     "fuel_percentage": "Carburant : %s"
   }
   

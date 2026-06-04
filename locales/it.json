@@ -22,7 +22,7 @@
     "no_fuel_can": "Non hai una tanica di benzina",
     "cant_give_card": "Impossibile dare la carta clonata (l'inventario potrebbe essere pieno)",
     "already_placed": "Questo oggetto è già stato posizionato.",
-    "object_control": "[SCROLL] Ruota  \n[PG UP/DOWN] Altezza  \n[ENTER] Posiziona  \n[BACKSPACE] Annulla",
+    "object_control": "[← →] Ruota  \n[↑ ↓] Altezza  \n[Scroll] Rotazione grossolana  \n[E / Invio] Posiziona  [Backspace] Annulla",
     "fuel_percentage": "Carburante: %s"
   }
   
