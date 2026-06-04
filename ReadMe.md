@@ -11,14 +11,15 @@ A fully-featured fraud script built for **ESX**, **QBCore**, and **Qbox**. Immer
 - 🧠 **Scam Minigame** — Skill-based hacking/fraud mechanic
 - 💸 **Customizable Payouts** — Fine-tune rewards for your server economy
 - 🏴‍☠️ **Black Market** — Purchase fraud items in-world
-- 🔔 **Notifications** — ox_lib, ESX, QBCore, okok, wasabi
-- 🎯 **Target Systems** — qb-target and ox_target
+- 🔔 **Notifications** — auto-detected via pl_lib (ox_lib, ESX, okok, wasabi, brutal_notify, mythic_notify, lation_ui)
+- 🎯 **Target Systems** — auto-detected via pl_lib (qb-target, ox_target)
 - 🌍 **Multi-Language** — English, Spanish, German, French, Italian, Turkish
 
 ## 📦 Dependencies
 
 - [ox_lib](https://github.com/overextended/ox_lib/releases)
-- [datacrack](https://github.com/utkuali/datacrack)
+- [pl_lib](https://github.com/pulsepk/pl_lib) — shared bridge library (target, notify, inventory, dispatch)
+- [datacrack](https://github.com/utkuali/datacrack) *(optional — required only if `Config.Hacking.Minigame = 'datacrack'`)*
 
 ## 📖 Installation
 
