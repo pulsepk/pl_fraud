@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'PulseScripts - pulsescripts.com'
 description 'Fraud Script'
-version '1.1.6'
+version '1.2.0'
 
 shared_scripts {
     '@ox_lib/init.lua',
@@ -16,7 +16,6 @@ client_scripts {
 }
 
 server_scripts {
-    'server/bridge/*',
     'server/main.lua',
     'server/shop.lua'
 }
@@ -26,7 +25,8 @@ files {
 }
 
 dependencies {
-    'ox_lib'
+    'ox_lib',
+    'pl_lib'
 }
 
 lua54 'yes'
