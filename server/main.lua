@@ -128,7 +128,7 @@ local function CheckMinigameDependency()
     end
 end
 
-RegisterServerEvent('onResourceStart', function(resourceName)
+AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
         print('^1['..resourceName..'] ^2Resource started successfully!^0')
         RegisterItems()
